@@ -415,15 +415,305 @@ while(numero != "ESC"){
 } */
 
 
+//EJERCICIOS:
+
+//ejercicio 3=
+
+/*  let alumnos = ""
+
+for (let i = 0; i < 10; i++){
+    
+    alumnos += prompt("ingrese nombre del alumno") +"\n";
+} 
+
+alert(alumnos);  */
+
+//ejercicio 4=
+
+/* let nombre = prompt("ingresar nombre");
+let ingresados = ""
+
+while(nombre != "Voldemort"){
+     ingresados += nombre +"\n";
+     nombre = prompt("ingresar nombre");
+}
+
+alert(ingresados);
+ */
 
 
+//ejercicio 5=
 
 
+/* let producto = prompt("seleccione un producto del 1 al 4");
+
+while(producto != "ESC"){
+    switch(producto){
+        
+        case "1":
+            alert("Tomate");
+            break;
+        case "2":
+            alert("Papa");
+            break;
+        case "3":
+            alert("Carne");
+            break;
+        case "4":
+            alert("Pollo");
+            break;
+        default:
+            alert("No ingresaste el valor correcto");
+            break;
+    }
+
+    producto = prompt("seleccione un producto del 1 al 4");
+}
+
+alert("terminaste el ciclo"); */
+
+//actividad 2:
+/* 
+let lados = prompt("ingrese la cantidad de lados");
+
+for(let i = 0; i < lados; i++){
+    if(lados > 3){
+        break;
+    }
+    alert("lado");
+}
+ */
+
+//EJERCICIOS DE PRACTICA:
+
+/* for(let i = 1; i <= 10; i++){
+    let nombre = prompt("ingrese su numbre");
+    let mensaje = `NOMBRE: ${nombre} TURNO: ${i}`;
+    alert(mensaje); 
+} */
+
+/* for(let i = 0; i < 10; i++){
+    if(i === 5){
+        break;
+    }
+    alert(i);
+}
+ */
+
+/* let numero = 0;
+
+do{
+    numero = prompt("ingrese un numero");
+    alert(numero);
+
+}
+while(parseInt(numero));
+ */
+
+//CLASE 4:
+
+/* function saludar(){
+    let nombre = prompt("Ingrese su nombre");
+    let mensaje = `Hola ${nombre}`;
+    alert(mensaje);
+}
+
+saludar(); */
+
+/* function saludar(nombre, edad){
+    let mensaje = `hola ${nombre} tienes ${edad} años de edad`
+    alert(mensaje);
+}
+
+let nombrePersona = prompt("Ingrese su nombre");
+let edadPersona = prompt("Ingrese su edad");
+
+saludar(nombrePersona, edadPersona); */
+
+/* function sumar(numero1, numero2){
+    console.log(numero1 + numero2);
+}
+
+sumar(3, 4);
+ */
+
+/* function sumar(numero1, numero2){
+  return numero1 + numero2;
+}
+
+let resultado = sumar(5, 4);
+
+console.log(resultado * 6); */
 
 
+/* function calculadora(num1, num2, operacion){
+    switch(operacion){
+        case "+":
+            return num1 + num2;
+            break;
+        case "-":
+            return num1 - num2;
+            break;
+        case "*":
+            return num1 * num2;
+            break;
+        case "/":
+            return num1 / num2;
+            break;
+        default:
+            return "operacion no disponible";
+            break;
+    }
+    }
 
- 
+console.log(calculadora(3, 4, "/")); */
 
+/* let nombre = "pablo";
+
+function saludar(){
+    let nombre = "delfi";
+    console.log(nombre);
+}
+
+console.log(nombre);
+
+saludar(); */
+
+/* function suma(num1, num2){
+    return num1 * num2;
+
+}
+
+let resultado = suma(3, 3);
+console.log(resultado);
+  */
+
+/* function suma(num1, num2){
+    let resultado = num1 + num2;
+    return resultado;
+}
+
+function resta(num1, num2){
+    let resultado = num1 - num2;
+    return resultado;
+} */
+
+/* let suma = (a, b) => {return a + b};
+
+console.log(suma(2, 1)); */
+
+/* let suma = (a, b) => a + b;
+
+console.log(suma(1, 1)); */
+
+/* let suma = (a, b) => a + b;
+let resta = (a, b) => a - b;
+let iva = x => x * 0.21;
+
+let precioProducto = 500;
+let descuento = 50;
+
+let nuevoPrecio = resta(suma(precioProducto, iva(precioProducto)), descuento); */
+
+//AFTER DE FUNCIONES:
+
+/* let gastoTotal = 0;
+let precioProducto = 0;
+let contador = 0;
+
+function ingresarPrecio() {
+    precioProducto = Number(prompt("Ingrese el precio del producto" + (contador + 1) + ":"));
+
+    while (precioProducto > 0) {
+        gastoTotal = calcularTotal(precioProducto);
+        contador++;
+        precioProducto = Number(prompt("Ingrese el precio del producto" + (contador + 1) + ":"));
+          
+    }
+
+    if((precioProducto <= 0) || (isNaN(precioProducto))){
+        console.log("Ha introduciodo un numero menor o igual a cero o un valor no numerico, por lo que hemo dejado de calcular el total");
+    }
+}
+
+function calcularTotal(precioProducto){
+    return gastoTotal + precioProducto;
+     
+}
+
+function mostrarTotal() {
+    console.log(`cantidad de productos: ${contador}`);
+    console.log(`El precio total es: ${gastoTotal}$`);
+}
+
+
+ingresarPrecio();
+mostrarTotal();
+ */
+
+/* let gastoTotal = 0;
+let precioProducto = 0;
+let contador = 0;
+
+const ingresarPrecio = function () {
+    precioProducto = Number(prompt("Ingrese el precio del producto" + (contador + 1) + ":"));
+
+    while (precioProducto > 0) {
+        gastoTotal = calcularTotal(precioProducto);
+        contador++;
+        precioProducto = Number(prompt("Ingrese el precio del producto" + (contador + 1) + ":"));
+          
+    }
+
+    if((precioProducto <= 0) || (isNaN(precioProducto))){
+        console.log("Ha introduciodo un numero menor o igual a cero o un valor no numerico, por lo que hemos dejado de calcular el total");
+    }
+}
+
+const calcularTotal = function (precioProducto){
+    return gastoTotal + precioProducto;
+     
+}
+
+const mostrarTotal = function () {
+    console.log(`cantidad de productos: ${contador}`);
+    console.log(`El precio total es: ${gastoTotal}$`);
+}
+
+
+ingresarPrecio();
+mostrarTotal(); */
+
+/* let gastoTotal = 0;
+let precioProducto = 0;
+let contador = 0;
+
+const ingresarPrecio = () => {
+    precioProducto = Number(prompt("Ingrese el precio del producto" + (contador + 1) + ":"));
+
+    while (precioProducto > 0) {
+        gastoTotal = calcularTotal(precioProducto);
+        contador++;
+        precioProducto = Number(prompt("Ingrese el precio del producto" + (contador + 1) + ":"));
+          
+    }
+
+    if((precioProducto <= 0) || (isNaN(precioProducto))){
+        console.log("Ha introduciodo un numero menor o igual a cero o un valor no numerico, por lo que hemos dejado de calcular el total");
+    }
+}
+
+const calcularTotal = precioProducto => gastoTotal + precioProducto;
+
+
+const mostrarTotal = () =>  {
+    console.log(`cantidad de productos: ${contador}`);
+    console.log(`El precio total es: ${gastoTotal}$`);
+}
+
+
+ingresarPrecio();
+mostrarTotal(); */
 
 
 

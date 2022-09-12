@@ -33,7 +33,7 @@ alert("deberias arrancar actividad fisica");
 
 //EJEMPLO 2:
 
-let entrenamiento = prompt("ingrese cuantos dias a la semana entrena, ingrese un valor numerico por favor");
+/* let entrenamiento = prompt("ingrese cuantos dias a la semana entrena, ingrese un valor numerico por favor");
 
 while(entrenamiento != "ESC"){
     if(entrenamiento === 0){
@@ -56,13 +56,4 @@ while(entrenamiento != "ESC"){
     
 }
 
-alert("terminaste el bucle");
-
-
-
-
-
-
-
-
-
+alert("terminaste el bucle"); */
