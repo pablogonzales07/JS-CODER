@@ -4,6 +4,7 @@
     alert(mensaje);
 }
 
+saludar();
 saludar(); */
 
 /* function saludar(nombre, edad){
@@ -20,10 +21,10 @@ saludar(nombrePersona, edadPersona); */
     console.log(numero1 + numero2);
 }
 
-sumar(3, 4);
- */
+sumar(3, 4); */
 
-/* function sumar(numero1, numero2){
+
+/*  function sumar(numero1, numero2){
   return numero1 + numero2;
 }
 
@@ -52,7 +53,13 @@ console.log(resultado * 6); */
     }
     }
 
-console.log(calculadora(3, 4, "/")); */
+    let numero1 = parseInt(prompt("ingresa un numero"));
+    let numero2 = parseInt(prompt("ingresa otro numero"));
+    let oper = prompt("ingrese que operacion quiere realizar");
+
+    alert(calculadora(numero1, numero2, oper)); */
+/* console.log(calculadora(3, 4, "+")); */
+
 
 /* let nombre = "pablo";
 
@@ -71,8 +78,8 @@ saludar(); */
 }
 
 let resultado = suma(3, 3);
-console.log(resultado);
-  */
+console.log(resultado); */
+ 
 
 /* function suma(num1, num2){
     let resultado = num1 + num2;
@@ -83,6 +90,10 @@ function resta(num1, num2){
     let resultado = num1 - num2;
     return resultado;
 } */
+
+/* let suma = function(a, b) {return a + b};
+
+console.log(suma(3, 3)); */
 
 /* let suma = (a, b) => {return a + b};
 
@@ -260,3 +271,59 @@ function salida (){
 
 solicitarRp();
 salida(); */
+
+//2)
+
+/* function redondeo(numero){
+    return Math.round(numero);
+}
+
+for (let i = 0; i < 5; i++){
+    let numeroIngresado = prompt("Ingrese un numero");
+    alert(redondeo(numeroIngresado));
+}
+
+alert("Finalizo la actividad"); */
+
+
+//3)
+
+/* function suma(precio, porcentaje){
+    return precio + ((precio * porcentaje) / 100);
+}
+
+for (let i = 0; i < 5; i++){
+    let resultado = suma(Number(prompt("Ingrese precio por favor")), Number(prompt("Ingrese el %")));
+    alert(resultado);
+}
+
+alert("FINALIZO LA ACTIVIDAD"); */
+
+//4)
+
+/* let pesosDolar = (pesos) => pesos / 280;
+let dolarPesos = (dolar) => dolar * 280;
+
+
+let seleccion = prompt("Ingresar que con tipo de conversion quiere realizar \n 1_Pesos a DOLARES \n 2_ Dolares a PESOS");
+let dinero = Number(prompt("Ingrese cuanto dinero desea cambiar"));
+
+switch(seleccion){
+    case "1":
+        alert(pesosDolar(dinero));
+        break;
+    case "2":
+        alert(dolarPesos(dinero));
+        break;
+    default:
+        alert("INGRESE UN DATO VALIDO");
+        break;
+}
+ */
+
+
+
+
+
+
+

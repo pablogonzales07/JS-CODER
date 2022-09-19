@@ -1,4 +1,4 @@
-let rpPrecio = 150;
+/* let rpPrecio = 150;
 let cantidadRp = 0;
 let precioFinal = 0;
 
@@ -28,4 +28,4 @@ function salida (){
 }
 
 solicitarRp();
-salida();
+salida(); */
