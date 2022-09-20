@@ -208,7 +208,7 @@ class Tienda{
     }
 }
 
-let ingresados;
+let ingresados = "";
 
 for (let i = 0; i < 5; i++){
     let tienda = new Tienda(prompt("Ingrese el nombre de su tienda"),
@@ -223,7 +223,142 @@ for (let i = 0; i < 5; i++){
                             
 }
 
+
 alert(ingresados); */
+
+//3)
+
+/* class Tienda{
+    constructor(nombre, direccion, propietario, rubro){
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.propietario = propietario;
+        this.rubro = rubro;
+    }
+
+    estaAbierto(hora){
+        if(((hora >= 8) && (hora <=12)) || ((hora >= 15) && (hora <= 19))){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+}
+
+
+const tienda1 = new Tienda("Los amores", "Av Hirygollen", "Pepito", "Heladeria");
+
+let horaUsuario = "";
+
+for (i = 0; i < 3; i++){
+    horaUsuario = parseInt(prompt("Por favor ingrese una hora para ver si esta abierto"));
+    if(tienda1.estaAbierto(horaUsuario)){
+        alert(`Las puertas estan ABIERTAS a las ${horaUsuario}`)
+    }
+    else{
+        alert(`Las puertas estan CERRADAS a las ${horaUsuario}`)
+    }
+}
+
+alert("FINALIZO LA ACTIVIDAD"); */
+
+//4)
+
+/* class Tienda{
+    constructor(nombre, direccion, propietario, rubro){
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.propietario = propietario;
+        this.rubro = rubro;
+    }
+
+    nombrePropietario(nombrePropietario){
+        if((nombrePropietario === "Pepito") || (nombrePropietario === "Juancito") || (nombrePropietario === "Santiago")){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+}
+
+const tienda1 = new Tienda("Los amores", "AV. HIRIGOLLEN", "Pepito", "Heladeria");
+const tienda2 = new Tienda("Bombke", "Mitre", "Juancito", "Heladeria");
+const tienda3 = new Tienda("Via Roca", "Portugal", "Santiago", "Heladeria");
+
+let nombreUsuario = "";
+for (let i = 0; i < 5; i++){
+
+    nombreUsuario = prompt("Por favor ingrese su nombre");
+
+    if((tienda1.nombrePropietario(nombreUsuario)) || (tienda2.nombrePropietario(nombreUsuario)) || (tienda3.nombrePropietario(nombreUsuario))){
+        alert(`${nombreUsuario} es PROPIETARIO de una de las tiendas`);
+    }
+    else{
+        alert(`${nombreUsuario} NO es PROPIETARIO de ninguna tienda`)
+    }
+
+}
+
+alert("FINALIZO la actividad"); */
+
+/* class Tienda{
+    constructor(nombre, direccion, propietario, rubro){
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.propietario = propietario;
+        this.rubro = rubro;
+    }
+
+    nombrePropietario(nombre){
+        this.propietario === nombre;
+    }
+}
+
+const tienda1 = new Tienda("Los amores", "AV. HIRIGOLLEN", "Pepito", "Heladeria");
+const tienda2 = new Tienda("Bombke", "Mitre", "Juancito", "Heladeria");
+const tienda3 = new Tienda("Via Roca", "Portugal", "Santiago", "Heladeria");
+
+
+for (let i = 0; i < 5; i++){
+
+    let nombreUsuario = prompt("Por favor ingrese su nombre");
+
+    if(nombreUsuario === nombrePropietario(nombreUsuario)){
+        alert(`${nombreUsuario} es propietario de la tienda ${tienda1.nombre}`)
+    }
+    if(nombreUsuario === nombrePropietario(nombreUsuario)){
+        alert(`${nombreUsuario} es propietario de la tienda ${tienda2.nombre}`)
+    }
+    if(nombreUsuario === nombrePropietario(nombreUsuario)){
+        alert(`${nombreUsuario} es propietario de la tienda ${tienda3.nombre}`)
+    }
+    else[
+        alert(`${nombreUsuario} NO es propietario de ninguna tienda`)
+    ]
+}
+
+alert("FINALIZO la actividad"); */
+
+//5)
+
+/* class Cliente{
+    constructor(nombre, presupuesto, descuento, telefono){
+        this.nombre = nombre;
+        this.presupuesto = Number(presupuesto);
+        this.descuento = descuento;
+        this.telefono = telefono;
+    }
+
+    transferirDinero(valor){
+
+    }
+}
+ */
+
+
+
 
 
 
