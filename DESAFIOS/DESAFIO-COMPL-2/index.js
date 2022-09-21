@@ -17,7 +17,6 @@ function formularioSocios(){
             nombre: prompt("Por favor ingrese su nombre"),
             apellido: prompt("Por favor ingrese su apellido"),
             edad: parseInt(prompt("Ingrese su edad por favor")),
-            numeroDeSocio: sociosActivos.length + 1,
             hora: prompt("Ingrese la hora por favor")
         }
 
@@ -31,26 +30,23 @@ function formularioSocios(){
                 nombre: prompt("Por favor ingrese su nombre"),
                 apellido: prompt("Por favor ingrese su apellido"),
                 edad: parseInt(prompt("Ingrese su edad por favor")),
-                numeroDeSocio: sociosActivos.length + 1,
-                hora: prompt("Ingrese la hora por favor")
+                hora: parseInt(prompt("Ingrese la hora por favor"))
             }
         )
 
-        if((socioDatos.hora > 8) && (socioDatos.hora < 19)){
+        if((socioDatos.hora < 8) || (socioDatos.hora > 19) || (isNaN(socioDatos.hora))){
             alert("Lo siento por el momento no podemos registrarlo intente nuevamente en otro horario")
 
         }
-        if((socioDatos.hora > 24) || (isNaN(socioDatos.hora))) {
-            alert("Usted a ingresado un dato no valido")
-        }
-
-
+        
     }
 
 }
 
 formularioSocios();
-alert(sociosActivos);
+alert(`SOCIOS INCORPORADOS EN EL DIA DE HOY:\n ${JSON.stringify(sociosActivos)}`);
+
+
 
 
 
