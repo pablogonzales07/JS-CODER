@@ -67,8 +67,16 @@ function reconocerSocio(){
      nombreSocioActivo = prompt("Ingrese su nombre");
      apellidoSocioActivo = prompt("Ingrese su apellido");
      
-     socioEncontrado = sociosActivos.find(socio => ((socio.nombre === nombreSocioActivo) && (socio.nombre === apellidoSocioActivo)));
-     mensajeParaSocio = `${socioEncontrado.nombre} ${socioEncontrado.apellido} se encuentra registrado correctamente`
+     socioEncontrado = sociosActivos.find(socio =>{
+        return (socio.nombre === nombreSocioActivo) && (socio.apellido === apellidoSocioActivo)
+     })
+     if(socioEncontrado !== undefined){
+     mensajeParaSocio = `${socioEncontrado.nombre} se encuentra registrado correctamente`;
+     alert(mensajeParaSocio);
+    }
+    else{
+        alert("Los sentimos no estas verificado")
+    }
      
 }
 
