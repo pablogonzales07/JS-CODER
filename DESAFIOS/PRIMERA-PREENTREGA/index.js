@@ -71,7 +71,7 @@ function reconocerSocio(){
         return (socio.nombre === nombreSocioActivo) && (socio.apellido === apellidoSocioActivo)
      })
      if(socioEncontrado !== undefined){
-     mensajeParaSocio = `${socioEncontrado.nombre} se encuentra registrado correctamente`;
+     mensajeParaSocio = `${socioEncontrado.nombre} ${socioEncontrado.apellido} se encuentra registrado correctamente`;
      alert(mensajeParaSocio);
     }
     else{
