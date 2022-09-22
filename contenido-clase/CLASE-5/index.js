@@ -80,7 +80,7 @@ let producto1 = new Producto (
 console.log(producto1); */
 
 /* function Producto(info, altura){
-    this.img = info.imagen;
+    this.img = info.img;
     this.nombre = info.nombre;
     this.precio = info.precio;
     this.envio = info.envio;
@@ -88,7 +88,7 @@ console.log(producto1); */
 }
 
 let info = {
-    imagen: "rfwefreferf",
+    img: "rfwefreferf",
     nombre: "Pablo",
     precio: 123,
     envio: "gratis",

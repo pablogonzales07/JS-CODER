@@ -1,4 +1,7 @@
-/* class Socios{
+alert("Bienvenidos al sitio oficial del club atletico san lorenzo de almagro");
+alert("Lo invitamos a asociarse al club mas hermoso del mundo")
+alert("A continuacion complete los datos que se piden, recuerde que solo puede hacerlo de 8AM A 19PM")
+class Socios{
     constructor(sociosInfo){
         this.nombre = sociosInfo.nombre;
         this.apellido = sociosInfo.apellido;
@@ -51,12 +54,25 @@ if(sociosActivos.length >= 1){
 }
 else {
     alert("No se registraron nuevos socios")
-}    */
+}  
 
+alert("Ya esta asociado? VERIFIQUELO");
 
+let nombreSocioActivo;
+let apellidoSocioActivo;
+let socioEncontrado;
+let mensajeParaSocio;
 
+function reconocerSocio(){
+     nombreSocioActivo = prompt("Ingrese su nombre");
+     apellidoSocioActivo = prompt("Ingrese su apellido");
+     
+     socioEncontrado = sociosActivos.find(socio => ((socio.nombre === nombreSocioActivo) && (socio.nombre === apellidoSocioActivo)));
+     mensajeParaSocio = `${socioEncontrado.nombre} ${socioEncontrado.apellido} se encuentra registrado correctamente`
+     
+}
 
-
+reconocerSocio();
 
 
 
