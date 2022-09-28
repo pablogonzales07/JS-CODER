@@ -82,6 +82,8 @@ function reconocerSocio(){
 
 reconocerSocio();
 
+alert("los invitamos a ver nuestros productos");
+
 
 let camisetas = [
     {id: 1, nombre: "camiseta titular año 2014", precio: 6900, img: "https://img.planetafobal.com/2014/03/camiseta-titular-lotto-san-lorenzo-2014.jpg"},
