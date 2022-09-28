@@ -138,6 +138,61 @@ console.log(hoy.getMonth());
 console.log(hoy.getDay()); */
 
 
+//AFTER CLASS:
+
+/* const productos = [
+    {id: 1, nombre: "Pantalon", precio: 700},
+    {id: 2, nombre: "Camisa", precio: 1500},
+    {id: 3, nombre: "Gorra", precio: 300},
+    {id: 4, nombre: "Zapato", precio: 2000},
+
+]; */
+
+/* productos.forEach(item => {
+    console.log(item.id, item.nombre, item.precio);
+}) */
+
+/* let nombre = prompt("Ingrese el nombre del producto");
+
+let encontrado = productos.find(item => item.nombre === nombre);
+
+let mensaje = `id: ${encontrado.id} nombre: ${encontrado.nombre} precio: ${encontrado.precio}`;
+alert(mensaje); */
+
+/* let precio = parseInt(prompt("Ingrese precio minimo"));
+
+let filtrados = productos.filter(item => item.precio > precio);
+
+filtrados.forEach(item => {
+    mensaje = `nombre: ${item.nombre} precio: ${item.precio}`
+    alert(mensaje);
+});
+ */
+
+
+/* let precios = productos.map(item => item.precio);
+let nombres = productos.map(item => item.nombre);
+let preciosActualizados = productos.map(item => {
+    return{
+        id: item.id,
+        nombre: item.nombre,
+        precio: item.precio + 1000
+    }
+})
+
+console.log(precios);
+console.log(nombres);
+console.log(preciosActualizados); */
+
+/* productos.forEach(item => {
+    let mensaje = `
+    nombre: ${item.nombre}
+    precio: ${item.precio}   
+    `
+
+    alert(mensaje);
+}) */
+
 
 
 
