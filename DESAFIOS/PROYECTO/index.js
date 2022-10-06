@@ -1,6 +1,8 @@
 let contenedor = document.getElementById("contenedor");
 let verCarrito = document.getElementById("carrito");
 let modalConteiner = document.getElementById("modalConteiner");
+
+//CARRITO:
 const camisetas = [
     {id:1 , nombre: "camiseta titular año 2014" , precio: 8500, img: "https://img.planetafobal.com/2014/03/camiseta-titular-lotto-san-lorenzo-2014.jpg"},
     {id:2 , nombre: "camiseta suplente año 2014" , precio: 7000, img: "https://img.planetafobal.com/2014/03/camiseta-suplente-lotto-san-lorenzo-2014.jpg"},
@@ -37,30 +39,41 @@ camisetas.forEach(camiseta => {
             precio: camiseta.precio
         })
         console.log(carrito);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
     })
-
-
-
 });
+
+let carritoStorage = JSON.parse(localStorage.getItem("carrito"));
+
+if(carritoStorage){
+    carrito = carritoStorage
+}
+
+//MODAL:
+
+//HEADER DEL MODAL
 
 verCarrito.addEventListener("click", () => {
     modalConteiner.innerHTML = "";
     modalConteiner.style.display = "flex";
     const modalHeader = document.createElement("div");
+    const modalBody = document.createElement("div");
+    modalBody.className = "cardsEstilo"
+    modalBody.id = "carritoContenedor"
     modalHeader.className = "modalHeader";
-    modalHeader.innerHTML = `
-                              <h2 class="modalHeaderTitle">CARRITO</h2>
+    modalHeader.innerHTML = `<div class="tituloModal">
+                                <h1 class="modalHeaderTitle">CARRITO</h1>
+                                <h2 class="modalButtonEstilo" id="cierreModal">X</h2>
+                              </div>                          
                             `;
     modalConteiner.append(modalHeader);
-    
-    const modalButton = document.createElement("h1");
-    modalButton.innerText = "X";
-    modalButton.className = "modalButtonEstilo";
-    modalButton.addEventListener("click", () => {
+    modalConteiner.append(modalBody);
+    let botonDeCierre = document.getElementById("cierreModal");
+    botonDeCierre.addEventListener("click", () => {
         modalConteiner.style.display = "none";
     })
-
-    modalHeader.append(modalButton);   
+    
+    //BODY DEL MODAL
 
     carrito.forEach(producto => {
         let carritoContenido = document.createElement("div");
@@ -70,20 +83,39 @@ verCarrito.addEventListener("click", () => {
                                        <h3>${producto.nombre}</h3>
                                        <p>${producto.precio}$</p>
                                      `;
-        modalConteiner.append(carritoContenido);
+        let carritoContenedor = document.getElementById("carritoContenedor");
+        carritoContenedor.append(carritoContenido);
 
     });
+
+    //FOOTER DEL MODAL
 
     const total = carrito.reduce((acc, el) => acc + el.precio, 0);
 
     const totalDeCompra = document.createElement("div");
     totalDeCompra.className = "totalDeCompra";
+    totalDeCompra.id = "totalDeCompra";
     totalDeCompra.innerHTML = `total a pagar ${total}$`;
     modalConteiner.append(totalDeCompra);
 
-
-
+    const eliminarCarrito = document.createElement("button");
+    eliminarCarrito.className = "botonEliminarCarrito";
+    eliminarCarrito.innerText = "eliminar carrito";
+    modalConteiner.append(eliminarCarrito);
+    eliminarCarrito.addEventListener("click", () => {
+        let carritoContenedor = document.getElementById("carritoContenedor");
+        let totalDeCompra = document.getElementById("totalDeCompra");
+        localStorage.clear();
+        totalDeCompra.innerHTML = "";
+        carritoContenedor.innerHTML = "";
+        alert("Productos eliminados");
+    })   
 });
+
+
+
+
+
 
 
 

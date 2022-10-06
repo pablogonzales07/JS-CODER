@@ -1,0 +1,13 @@
+.precio{
+    color: blue;
+}
+
+.imagenProducto{
+    width: 5vw;
+    height: 5vh;
+}
+
+.contenedor{
+    border: 1px black solid;
+    
+}
