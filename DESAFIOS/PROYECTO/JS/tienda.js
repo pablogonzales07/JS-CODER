@@ -14,7 +14,7 @@ const camisetas = [
     {id:8 , nombre: "camiseta suplente año 2017", precio: 10500, img: "https://http2.mlstatic.com/D_NQ_NP_882728-MLA29468470321_022019-O.jpg"},
 ];
 
-let carrito = [];
+/* let carrito = []; */
 
 camisetas.forEach(camiseta => {
     let caja = document.createElement("div");
@@ -38,16 +38,24 @@ camisetas.forEach(camiseta => {
             nombre: camiseta.nombre,
             precio: camiseta.precio
         })
-        console.log(carrito);
         localStorage.setItem("carrito", JSON.stringify(carrito));
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'su producto se agrego correctamente',
+            showConfirmButton: false,
+            timer: 1000
+          });
     })
 });
 
-let carritoStorage = JSON.parse(localStorage.getItem("carrito"));
+/* let carritoStorage = JSON.parse(localStorage.getItem("carrito"));
 
 if(carritoStorage){
     carrito = carritoStorage
-}
+} */
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //MODAL:
 
@@ -107,8 +115,8 @@ verCarrito.addEventListener("click", () => {
         let totalDeCompra = document.getElementById("totalDeCompra");
         localStorage.clear();
         totalDeCompra.innerHTML = "";
-        carritoContenedor.innerHTML = "";
-        alert("Productos eliminados");
+        carritoContenedor.innerHTML = ""; 
+        alert("Productos eliminados");                     
     })   
 });
 

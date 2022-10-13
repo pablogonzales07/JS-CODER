@@ -12,7 +12,7 @@ html {
 /* Diseño del body */
 
 body{
-    background-color: #2C3333;
+    background-color: #fff;
     background-repeat: repeat;
     background-attachment: fixeo;
     background-size: cover;
@@ -51,14 +51,14 @@ body{
 
 /* DISEÑO DE TIENDA */
 
-#tiendaContenido h1{
-    color: white;
+#pageTienda h1{
+    color: #395B64;
     text-align: center;
     font-size: 4em;
     margin-top: 15px;
     margin-bottom: 20px;
-
 }
+
 
 /* diseño de las cards */
 
@@ -185,3 +185,51 @@ body{
     opacity: 0.7;
     cursor: pointer;
 }
+
+/* DISEÑO MI CASLA */
+
+.miCaslaDiseño h1{
+    color: #395B64;
+    text-align: center;
+    font-size: 4em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.articuloTexto{
+    color: #121212;
+    padding: 20px;
+    font-size: 2.5em;
+}
+
+.botonesMiCasla{
+    background-color: #395B64;
+    color: black;
+    font-size: 2.5em;
+    font-weight: 600 ;
+    cursor: pointer;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+/* formulario de inicio de sesion */
+
+.formIsesion{
+    display: flex;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.formularioEstilo label{
+    font-size: 2em;
+}
+
+.formularioEstilo button {
+    font-size: 2em;
+    background-color: #395B64 ;
+    color: black;
+}
+

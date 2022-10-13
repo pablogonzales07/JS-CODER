@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,48 +10,79 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
 
-<!-- EMPIEZA NAV -->
+    <!-- EMPIEZA NAV -->
 
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light navFondo">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
-            <img class="logoTamaño" src="../IMAGENES/ICONO-LOGO/logo-casla.png"
-                alt="logo del escudo de san lorenzo de almagro">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="./tienda.html">Tienda</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./micasla.html">Mi casla</a>
-                </li>
-            </ul>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light navFondo">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+                <img class="logoTamaño" src="../IMAGENES/ICONO-LOGO/logo-casla.png"
+                    alt="logo del escudo de san lorenzo de almagro">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./tienda.html">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./micasla.html">Mi casla</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
+
+    <!-- TERMINA NAV -->
+
+    <!-- EMPIEZA HEADER -->
+
+    <header id="header">
+        <img class="headerDiseño" src="../IMAGENES/HEADER/fondo-header.webp" alt="">
+    </header>
+
+    <!-- TERMINA HEADER-->
+
+    <!-- EMPIEZA SECCION ASOCIATE-->
+    <div class="containerFluid miCaslaDiseño">
+        <h1>Creandote un usuario MI CASLA todo es mas sencillo</h1>
+        <section>
+            <article class="articuloTexto col-sm-12">
+                <p>
+                    MiCASLA llegó para facilitarle la experiencia a los socios y socias del Ciclón. Ahora, registrándote en
+                    esta nueva plataforma, tenés la posibilidad de llevar a cabo trámites y gestiones sin tener que
+                    acercarte al club, simplemente haciendo un par de clicks en tu celular o el dispositivo móvil que
+                    utilices. Sí, es que, por supuesto, vas a poder seguir asociándote, comprar y renovar abonos, pero a
+                    partir de ahora, además, podes abonar actividades; elevar reclamos y hacer consultas que nuestro equipo
+                    de Atención al Socio atenderá a la brevedad; administrar tu grupo familiar; y aprovechar de un amplio
+                    abanico de opciones de pago de cuota social. Además, pronto vas a poder contar con la posibilidad de
+                    reservar turnos para clases de tenis, fitness y otras disciplinas.
+                </p>
+            </article>
+            <div class="text-center col-sm-12">
+                <button type="button" id="botonIsesion" class="btn btn-lg botonesMiCasla">Iniciar Sesion</button>
+                <button type="button" id="botonRegistrate" class="btn btn-lg botonesMiCasla">Registrate</button>
+            </div>
+            <article id="formContenedor">
+    
+            </article>
     </div>
-</nav>
+        
 
-<!-- TERMINA NAV -->
-
-<!-- EMPIEZA HEADER -->
-
-<header id="header">
-    <img class="headerDiseño" src="../IMAGENES/HEADER/fondo-header.webp" alt="">
-</header>
-
-<!-- TERMINA HEADER-->
+    </section>
+    <!-- TERMINA SECCION ASOCIATE-->
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-crossorigin="anonymous"></script>
-<script src="../index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="../JS/micasla.js"></script>
 </body>
+
 </html>
