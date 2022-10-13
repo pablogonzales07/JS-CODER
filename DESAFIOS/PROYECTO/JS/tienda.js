@@ -115,9 +115,9 @@ verCarrito.addEventListener("click", () => {
         let totalDeCompra = document.getElementById("totalDeCompra");
         localStorage.clear();
         totalDeCompra.innerHTML = "";
-        carritoContenedor.innerHTML = ""; 
-        alert("Productos eliminados");                     
-    })   
+        carritoContenedor.innerHTML = "";
+        carrito = [];              
+    });   
 });
 
 
