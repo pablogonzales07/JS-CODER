@@ -32,12 +32,22 @@ camisetas.forEach(camiseta => {
     caja.append(comprar);
 
     comprar.addEventListener("click", () => {
-        carrito.push({
-            id: camiseta.id,
-            img: camiseta.img,
-            nombre: camiseta.nombre,
-            precio: camiseta.precio
-        })
+        let productoExiste = carrito.find(remera => remera.id === camiseta.id);
+        
+        if(productoExiste === undefined){
+            carrito.push({
+                id: camiseta.id,
+                img: camiseta.img,
+                nombre: camiseta.nombre,
+                precio: camiseta.precio,
+                cantidad: 1
+            })
+        }
+        else{
+            productoExiste.precio = productoExiste.precio + camiseta.precio;
+            productoExiste.cantidad = productoExiste.cantidad +1
+        }
+        
         localStorage.setItem("carrito", JSON.stringify(carrito));
         Swal.fire({
             position: 'center',
@@ -48,12 +58,6 @@ camisetas.forEach(camiseta => {
           });
     })
 });
-
-/* let carritoStorage = JSON.parse(localStorage.getItem("carrito"));
-
-if(carritoStorage){
-    carrito = carritoStorage
-} */
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -90,10 +94,22 @@ verCarrito.addEventListener("click", () => {
                                        <img src="${producto.img}">
                                        <h3>${producto.nombre}</h3>
                                        <p>${producto.precio}$</p>
+                                       <span>${producto.cantidad}</span>
+                                       <button id=${producto.id}>X</button>
                                      `;
         let carritoContenedor = document.getElementById("carritoContenedor");
         carritoContenedor.append(carritoContenido);
 
+        let botonEliminarCarrito = document.getElementById(producto.id);
+        botonEliminarCarrito.addEventListener("click", () => {
+        
+        let botonEliminarProducto = carrito.find(remera => remera.id === producto.id);
+        let indice = carrito.indexOf(botonEliminarProducto);
+        carrito.splice(indice, 1);
+        carritoContenido.innerHTML = "";
+        carrito.filter(remeras => remeras.id != producto.id);        
+        localStorage.setItem("carrito", JSON.stringify(carrito));   
+        })
     });
 
     //FOOTER DEL MODAL
@@ -113,7 +129,7 @@ verCarrito.addEventListener("click", () => {
     eliminarCarrito.addEventListener("click", () => {
         let carritoContenedor = document.getElementById("carritoContenedor");
         let totalDeCompra = document.getElementById("totalDeCompra");
-        localStorage.clear();
+        localStorage.removeItem("carrito");
         totalDeCompra.innerHTML = "";
         carritoContenedor.innerHTML = "";
         carrito = [];              
