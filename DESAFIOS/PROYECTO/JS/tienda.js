@@ -3,7 +3,7 @@ let verCarrito = document.getElementById("carrito");
 let modalConteiner = document.getElementById("modalConteiner");
 
 //CARRITO:
-const camisetas = [
+/* const camisetas = [
     {id:1 , nombre: "camiseta titular año 2014" , precio: 8500, img: "https://img.planetafobal.com/2014/03/camiseta-titular-lotto-san-lorenzo-2014.jpg"},
     {id:2 , nombre: "camiseta suplente año 2014" , precio: 7000, img: "https://img.planetafobal.com/2014/03/camiseta-suplente-lotto-san-lorenzo-2014.jpg"},
     {id:3 , nombre: "camiseta titular año 2015", precio: 9000, img: "http://d3ugyf2ht6aenh.cloudfront.net/stores/384/008/products/casla-20151-ca1b3f9434452e183416186659212949-640-0.png"},
@@ -12,11 +12,61 @@ const camisetas = [
     {id:6 , nombre: "camiseta suplente año 2016", precio: 9600, img: "https://http2.mlstatic.com/D_NQ_NP_652408-MLA51512680564_092022-O.webp"},
     {id:7 , nombre: "camiseta titular año 2017", precio: 12000, img: "http://d3ugyf2ht6aenh.cloudfront.net/stores/384/008/products/numeros-velez-sarfield-titutar-y-suplente-umbro-2015-902111-mla20474858408_112015-o-500x5001-a7d57a00fc0b657f1616357296099377-640-0.jpg"},
     {id:8 , nombre: "camiseta suplente año 2017", precio: 10500, img: "https://http2.mlstatic.com/D_NQ_NP_882728-MLA29468470321_022019-O.jpg"},
-];
+]; */
 
 /* let carrito = []; */
 
-camisetas.forEach(camiseta => {
+const traerProductos = async () => {
+    const response = await fetch("../productos.json");
+    const data = await response.json();
+
+    data.forEach(camiseta => {
+        let caja = document.createElement("div");
+        caja.className = "card";
+        caja.innerHTML = `
+                           <img src=${camiseta.img}>
+                           <h3>${camiseta.nombre}</h3>
+                           <p class="parrafo">${camiseta.precio}$</p>
+                         `
+        contenedor.append(caja);
+
+        let comprar = document.createElement("button");
+        comprar.innerText = "COMPRAR";
+        comprar.className = "comprar"
+        caja.append(comprar);
+
+        comprar.addEventListener("click", () => {
+            let productoExiste = carrito.find(remera => remera.id === camiseta.id);
+        
+            if(productoExiste === undefined){
+              carrito.push({
+                  id: camiseta.id,
+                  img: camiseta.img,
+                  nombre: camiseta.nombre,
+                  precio: camiseta.precio,
+                  cantidad: 1
+                })
+            }
+            else{
+                  productoExiste.precio = productoExiste.precio + camiseta.precio;
+                  productoExiste.cantidad = productoExiste.cantidad +1
+            }
+        
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'su producto se agrego correctamente',
+              showConfirmButton: false,
+              timer: 1000
+            });
+        })
+    })
+};
+
+traerProductos();
+
+/* camisetas.forEach(camiseta => {
     let caja = document.createElement("div");
     caja.className = "card";
     caja.innerHTML = `
@@ -57,7 +107,7 @@ camisetas.forEach(camiseta => {
             timer: 1000
           });
     })
-});
+}); */
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
