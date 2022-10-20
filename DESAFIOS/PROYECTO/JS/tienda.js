@@ -108,7 +108,10 @@ verCarrito.addEventListener("click", () => {
         carrito.splice(indice, 1);
         carritoContenido.innerHTML = "";
         carrito.filter(remeras => remeras.id != producto.id);        
-        localStorage.setItem("carrito", JSON.stringify(carrito));   
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        let precioTotal = document.getElementById("totalDeCompra");
+        let nuevoPrecio = carrito.reduce((acc, el) => acc + el.precio, 0);
+        precioTotal.innerHTML = `total a pagar ${nuevoPrecio}$`
         })
     });
 

@@ -1,6 +1,7 @@
 let botonIsesion = document.getElementById("botonIsesion");
 let botonRegistrate = document.getElementById("botonRegistrate");
 let formContenedor = document.getElementById("formContenedor");
+let cajaUsuarioNav = document.getElementById("usuarioContenedor");
 
 class UsuariosInfo{
   constructor(nombre, edad, email, dni, contraseña){
@@ -124,11 +125,23 @@ botonIsesion.addEventListener("click", () => {
         console.log(usuarioEncontrado);
         alert(`bienvenido ${usuarioEncontrado[0].nombre}`); */
         let usuarioEncontrado = usuarios.find(usuario => usuario.contraseña === contraRegistrada.value);
-        alert(`bienvenido ${usuarioEncontrado.nombre}`);
+        usuarioLogueado = [];
+        usuarioLogueado.push(usuarioEncontrado);
+
+        localStorage.setItem("usuarioIngresado", JSON.stringify(usuarioLogueado));
       }
-    }    
+    }
   })
 });
+
+let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioIngresado")) || [];
+
+let cajaNombreUsuario = document.createElement("div");
+cajaNombreUsuario.innerHTML = `
+                                <h3>${usuarioLogueado[0].nombre}</h3>
+                                <img src="../IMAGENES/MI-CASLA/usuario.svg"></img>                                       
+                              `;
+cajaUsuarioNav.append(cajaNombreUsuario);
 
 
 
