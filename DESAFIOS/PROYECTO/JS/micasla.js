@@ -2,6 +2,7 @@ let botonIsesion = document.getElementById("botonIsesion");
 let botonRegistrate = document.getElementById("botonRegistrate");
 let formContenedor = document.getElementById("formContenedor");
 let cajaUsuarioNav = document.getElementById("usuarioContenedor");
+let cajaCerrarSesion = document.getElementById("cerrarSesion");
 
 class UsuariosInfo{
   constructor(nombre, edad, email, dni, contraseña){
@@ -13,13 +14,13 @@ class UsuariosInfo{
   }
 }
 
-/* let usuarios = []; */
-
 botonRegistrate.addEventListener("click", () => {
     formContenedor.innerHTML = "";
+    location.href = "#formContenedor"
+
     let formRegistrate = document.createElement("div");
     formRegistrate.innerHTML = `
-                                <form id="formularioDeRegistro">
+                                <form class="w-100" id="formularioDeRegistro">
                                    <div class="mb-3">
                                     <label for="nombre" class="">Nombre y Apellido</label>
                                     <input type="name" class="form-control" id="nombre" aria-describedby="emailHelp"
@@ -37,43 +38,44 @@ botonRegistrate.addEventListener("click", () => {
                                   </div>
                                   <div class="mb-3">
                                    <label for="dni" class="">Dni</label>
-                                   <input type="number" class="form-control mb" id="dni" aria-describedby="emailHelp"
+                                   <input type="number" class="form-control" id="dni" aria-describedby="emailHelp"
                                        placeholder="Ingrese su dni">
                                   </div>
                                   <div class="mb-3">
                                     <label for="contraseña" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="contraseña">
+                                    <input type="password" class="form-control" id="contraseña" placeholder="Ingrese su contraseña">
                                   </div>
                                   <div class="botons_form">
-                                    <input type="reset" value="Cancelar" class="boton_cancelar">
-                                    <input type="submit" value="Enviar" class="boton_enviar">
+                                    <input type="reset" value="Cancelar" class="botonesForm">
+                                    <input type="submit" value="Enviar" class="botonesForm">
                                   </div>                                
                                 </form>
                                `;
+    formRegistrate.className = "formularioRegistro"
     formContenedor.append(formRegistrate);
-
+    
     let formRegistro = document.getElementById("formularioDeRegistro");
-
     formRegistro.addEventListener("submit", (e) => {
       e.preventDefault();
 
       let nombreUsuario = document.getElementById("nombre");
-      console.log(nombreUsuario.value);
       let edadUsuario = document.getElementById("edad");
-      console.log(edadUsuario.value);
       let emailUsuario = document.getElementById("correo");
-      console.log(emailUsuario.value);
       let dniUsuario = document.getElementById("dni");
-      console.log(dniUsuario.value);
       let contraseñaUsuario = document.getElementById("contraseña");
-      console.log(contraseñaUsuario.value);
-
       let persona = new UsuariosInfo(nombreUsuario.value, edadUsuario.value, emailUsuario.value, dniUsuario.value, contraseñaUsuario.value);
-      usuarios.push(persona);
+      
+      let usuarioRepetido = usuarios.find(usuario => usuario.email === emailUsuario.value);
+      console.log(usuarioRepetido);
 
-      localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-
+      if(usuarioRepetido === undefined){
+        usuarios.push(persona);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        alert("Se ha registrado con exito");
+      }
+      else{
+        alert("ya hay un usuario registrado con este email")
+      }
     });   
 });
 
@@ -81,6 +83,7 @@ let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 botonIsesion.addEventListener("click", () => {
   formContenedor.innerHTML = "";
+  location.href = "#formContenedor"
   let formIsesion = document.createElement("div");
   formIsesion.innerHTML = `
                           
@@ -103,45 +106,74 @@ botonIsesion.addEventListener("click", () => {
   formIsesion.className = "formIsesion"
   formContenedor.append(formIsesion);
 
-  let formularioIsesion = document.getElementById("formularioIsesion");
+let formularioIsesion = document.getElementById("formularioIsesion");
 
-  formularioIsesion.addEventListener("submit", (e) => {
+formularioIsesion.addEventListener("submit", () => {
 
-    e.preventDefault();
-    let emailRegistrado = document.getElementById("emailRegistrado");
-    let contraRegistrada = document.getElementById("contraRegistrada");
+  usuarioLogueado = [];
+  let emailRegistrado = document.getElementById("emailRegistrado");
+  let contraRegistrada = document.getElementById("contraRegistrada");
 
-    let emailencontrado = usuarios.find(usuario => usuario.email === emailRegistrado.value);
-    if(emailencontrado === undefined){
-      alert("usuario no registrado");
-    }
-    else{
-      let contraEncontrada = usuarios.find(usuario => usuario.contraseña === contraRegistrada.value);
-      if(contraEncontrada === undefined){
-        alert("contraseña no encontrada")
-      }
-      else{
-/*         let usuarioEncontrado = usuarios.filter(usuario => usuario.contraseña === contraRegistrada.value);
-        console.log(usuarioEncontrado);
-        alert(`bienvenido ${usuarioEncontrado[0].nombre}`); */
-        let usuarioEncontrado = usuarios.find(usuario => usuario.contraseña === contraRegistrada.value);
-        usuarioLogueado = [];
-        usuarioLogueado.push(usuarioEncontrado);
+  let emailencontrado = usuarios.find(usuario => usuario.email === emailRegistrado.value);
+  let contraEncontrada = usuarios.find(usuario => usuario.contraseña === contraRegistrada.value);
 
-        localStorage.setItem("usuarioIngresado", JSON.stringify(usuarioLogueado));
-      }
-    }
-  })
-});
+  if((emailencontrado === undefined) || (contraEncontrada === undefined)){
+    alert("Usuario no registrado");
+  }
+  else{
+    let usuarioEncontrado = usuarios.find(usuario => usuario.email === emailRegistrado.value);
+    alert(`Bienvenido ${usuarioEncontrado.nombre}`);
+    usuarioLogueado.push(usuarioEncontrado);
+  }
+
+  localStorage.setItem("usuarioIngresado", JSON.stringify(usuarioLogueado));
+}) 
+
+})
 
 let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioIngresado")) || [];
 
 let cajaNombreUsuario = document.createElement("div");
 cajaNombreUsuario.innerHTML = `
-                                <h3>${usuarioLogueado[0].nombre}</h3>
-                                <img src="../IMAGENES/MI-CASLA/usuario.svg"></img>                                       
-                              `;
-cajaUsuarioNav.append(cajaNombreUsuario);
+                        <h3 class="usuarioNombre">${usuarioLogueado[0].nombre}</h3>
+                        <img src="../IMAGENES/MI-CASLA/usuario.svg" class="logoUsuario" id="logoUsuario"></img>                                                                                          
+                      `;
+cajaNombreUsuario.className = "usuarioNavDiseño"
+cajaUsuarioNav.append(cajaNombreUsuario); 
+
+let logoUsuario = document.getElementById("logoUsuario");
+
+logoUsuario.addEventListener("click", () => {
+
+  let cerrarSesion = document.createElement("div");
+  cerrarSesion.innerHTML = `
+                             <p>NOMBRE: ${usuarioLogueado[0].nombre}</p>
+                             <p>EDAD: ${usuarioLogueado[0].edad}</p>
+                             <p>EMAIL: ${usuarioLogueado[0].email}</p>
+                             <p>DNI: ${usuarioLogueado[0].dni}</p>
+                             <button id="botonCerrarSesion" class="botonCerrarSesion">Cerrar sesion</button>                            
+                           `;
+  cerrarSesion.className = "cerrarSesion";
+  cajaCerrarSesion.append(cerrarSesion);
+
+  let botonCerrarSesion = document.getElementById("botonCerrarSesion");
+
+
+  botonCerrarSesion.addEventListener("click", () => {
+    localStorage.removeItem("usuarioIngresado");
+    usuarioLogueado = [];
+    cajaCerrarSesion.innerHTML = "";
+    cajaNombreUsuario.innerHTML = "";
+  })
+});
+
+
+
+
+
+
+
+
 
 
 

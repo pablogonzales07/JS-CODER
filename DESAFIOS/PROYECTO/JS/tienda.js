@@ -145,7 +145,7 @@ verCarrito.addEventListener("click", () => {
                                        <h3>${producto.nombre}</h3>
                                        <p>${producto.precio}$</p>
                                        <span>${producto.cantidad}</span>
-                                       <button id=${producto.id}>X</button>
+                                       <button class="eliminarProductoCarrito" id=${producto.id}>X</button>
                                      `;
         let carritoContenedor = document.getElementById("carritoContenedor");
         carritoContenedor.append(carritoContenido);

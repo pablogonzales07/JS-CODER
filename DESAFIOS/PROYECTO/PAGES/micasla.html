@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Lorenzo De Almagro-Mi Casla-Realiza tus tramites de forma mas rapida</title>
+    <link rel="shortcut icon" href="../IMAGENES/ICONO-LOGO/logo-casla.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
@@ -37,10 +38,14 @@
                 </ul>
             </div>
             <div id="usuarioContenedor" class="cajaUsuarioNav">
-
             </div>
         </div>
     </nav>
+
+    <div id="cerrarSesion" class="cajaCerrarSesion">
+
+    </div>
+
 
     <!-- TERMINA NAV -->
 
@@ -58,12 +63,15 @@
         <section>
             <article class="articuloTexto col-sm-12">
                 <p>
-                    MiCASLA llegó para facilitarle la experiencia a los socios y socias del Ciclón. Ahora, registrándote en
+                    MiCASLA llegó para facilitarle la experiencia a los socios y socias del Ciclón. Ahora, registrándote
+                    en
                     esta nueva plataforma, tenés la posibilidad de llevar a cabo trámites y gestiones sin tener que
                     acercarte al club, simplemente haciendo un par de clicks en tu celular o el dispositivo móvil que
                     utilices. Sí, es que, por supuesto, vas a poder seguir asociándote, comprar y renovar abonos, pero a
-                    partir de ahora, además, podes abonar actividades; elevar reclamos y hacer consultas que nuestro equipo
-                    de Atención al Socio atenderá a la brevedad; administrar tu grupo familiar; y aprovechar de un amplio
+                    partir de ahora, además, podes abonar actividades; elevar reclamos y hacer consultas que nuestro
+                    equipo
+                    de Atención al Socio atenderá a la brevedad; administrar tu grupo familiar; y aprovechar de un
+                    amplio
                     abanico de opciones de pago de cuota social. Además, pronto vas a poder contar con la posibilidad de
                     reservar turnos para clases de tenis, fitness y otras disciplinas.
                 </p>
@@ -72,13 +80,65 @@
                 <button type="button" id="botonIsesion" class="btn btn-lg botonesMiCasla">Iniciar Sesion</button>
                 <button type="button" id="botonRegistrate" class="btn btn-lg botonesMiCasla">Registrate</button>
             </div>
-            <article id="formContenedor">
-    
+            <article class="my-4" id="formContenedor">
             </article>
-    
-    
-    
         </section>
+        <div class="separadorDiseño"></div>
+
+        <h2>Con MI CASLA tenes acceso gratuitio a todas nuestras actividades y instalaciones</h2>
+        <section class="instalacionesCasla">
+            <article class="cardsContenedor">
+                <div class="cardAnimacion" id="basket">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../IMAGENES/MI-CASLA/basket.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Basket</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardAnimacion" id="gym">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../IMAGENES/MI-CASLA/gym.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Gym</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardAnimacion" id="voley">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../IMAGENES/MI-CASLA/volleyball.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Voley</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardAnimacion" id="futbol">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../IMAGENES/MI-CASLA/football.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>futbol</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardAnimacion" id="tenis">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../IMAGENES/MI-CASLA/tenis.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Tenis</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardAnimacion" id="futsal">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../IMAGENES/MI-CASLA/football.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>futsal</h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
     </div>
     <!-- TERMINA SECCION ASOCIATE-->
 
@@ -86,6 +146,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="../JS/deportes.js"></script>
     <script src="../JS/micasla.js"></script>
 </body>
 
