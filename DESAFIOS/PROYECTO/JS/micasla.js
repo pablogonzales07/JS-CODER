@@ -95,7 +95,7 @@ let formularioIsesion = document.getElementById("formularioIsesion");
 
 formularioIsesion.addEventListener("submit", () => {
   loguearUsuario();
-}) 
+})
 })
 
 let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioIngresado")) || [];
