@@ -14,6 +14,8 @@ class UsuariosInfo{
   }
 }
 
+//formulario de registro
+
 botonRegistrate.addEventListener("click", () => {
     formContenedor.innerHTML = "";
     location.href = "#formContenedor"
@@ -56,30 +58,13 @@ botonRegistrate.addEventListener("click", () => {
     
     let formRegistro = document.getElementById("formularioDeRegistro");
     formRegistro.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      let nombreUsuario = document.getElementById("nombre");
-      let edadUsuario = document.getElementById("edad");
-      let emailUsuario = document.getElementById("correo");
-      let dniUsuario = document.getElementById("dni");
-      let contraseñaUsuario = document.getElementById("contraseña");
-      let persona = new UsuariosInfo(nombreUsuario.value, edadUsuario.value, emailUsuario.value, dniUsuario.value, contraseñaUsuario.value);
-      
-      let usuarioRepetido = usuarios.find(usuario => usuario.email === emailUsuario.value);
-      console.log(usuarioRepetido);
-
-      if(usuarioRepetido === undefined){
-        usuarios.push(persona);
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
-        alert("Se ha registrado con exito");
-      }
-      else{
-        alert("ya hay un usuario registrado con este email")
-      }
+     registrarUsuario(e);
     });   
 });
 
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+//formulario de inicio de sesion
 
 botonIsesion.addEventListener("click", () => {
   formContenedor.innerHTML = "";
@@ -109,29 +94,13 @@ botonIsesion.addEventListener("click", () => {
 let formularioIsesion = document.getElementById("formularioIsesion");
 
 formularioIsesion.addEventListener("submit", () => {
-
-  usuarioLogueado = [];
-  let emailRegistrado = document.getElementById("emailRegistrado");
-  let contraRegistrada = document.getElementById("contraRegistrada");
-
-  let emailencontrado = usuarios.find(usuario => usuario.email === emailRegistrado.value);
-  let contraEncontrada = usuarios.find(usuario => usuario.contraseña === contraRegistrada.value);
-
-  if((emailencontrado === undefined) || (contraEncontrada === undefined)){
-    alert("Usuario no registrado");
-  }
-  else{
-    let usuarioEncontrado = usuarios.find(usuario => usuario.email === emailRegistrado.value);
-    alert(`Bienvenido ${usuarioEncontrado.nombre}`);
-    usuarioLogueado.push(usuarioEncontrado);
-  }
-
-  localStorage.setItem("usuarioIngresado", JSON.stringify(usuarioLogueado));
+  loguearUsuario();
 }) 
-
 })
 
 let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioIngresado")) || [];
+
+//caja de usuario logueado 
 
 let cajaNombreUsuario = document.createElement("div");
 cajaNombreUsuario.innerHTML = `
