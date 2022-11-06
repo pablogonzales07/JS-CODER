@@ -57,6 +57,75 @@ body{
     height: 90vh;
 }
 
+/* Diseño del index */
+
+.indexEstilo h1{
+    color: #395B64;
+    text-align: center;
+    font-size: 4em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.presentacionIndex{
+    font-size: 3em;
+    color: #0a0909;
+    font-weight: 600;
+    text-align: center;
+    margin: 15px;
+    padding: 10px;
+}
+
+.logoBotonera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.botonera{
+    grid-area: botonera;
+}
+
+.botonesIndex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.botonesIndex a{
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #395B64;
+    color: black;
+    font-size: 2.5em;
+    font-weight: 600 ;
+    cursor: pointer;
+    list-style: none;
+    text-decoration: none;
+}
+
+.cardsIndex{
+    grid-area: cardsIndex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.cardsNombres{
+    font-size: 2em;
+    text-align: center;
+    padding: 5px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 20vw 70vw;
+    grid-template-rows: auto;
+    grid-template-areas: "botonera cardsIndex"
+                         "botonera cardsIndex"
+                         
+                         ;
+}
 /* DISEÑO DE TIENDA */
 
 #pageTienda h1{
@@ -457,8 +526,8 @@ font-size: 1.8em;
 
 .footerDiseño{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
     background-color: #2C3333;
+    padding: 10px;
+    margin-top: 20px;
 }
